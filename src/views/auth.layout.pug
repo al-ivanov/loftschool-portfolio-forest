@@ -9,8 +9,8 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | Welcome page
     link(rel="stylesheet", href="./assets/css/main.min.css")
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js')
-    script(src='https://threejs.org/build/three.min.js')
+    script(src='./assets/js/libs/TweenMax.min.js')
+    script(src='./assets/js/libs/three.min.js')
   body
     #animated-number
     block content
@@ -106,7 +106,7 @@ html(lang="en")
       //camera = new THREE.PerspectiveCamera(145, window.innerWidth / window.innerHeight, 1, 5000 );
       camera.position.z = 1;
       scene = new THREE.Scene();
-      var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+      var geometry = new THREE.PlaneGeometry( 2, 2 );
       var MyTexture = loader.load( "./assets/images/water.jpg" );
       var mapTexture = loader.load( "./assets/images/water-maps.jpg" );
       MyTexture.minFilter = THREE.LinearFilter;

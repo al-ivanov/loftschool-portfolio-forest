@@ -57,6 +57,13 @@ gulp.task("pug", () => {
     .pipe(reload({ stream: true }));
 });
 
+// переносим библиотеки
+gulp.task("libs", () => {
+  return gulp
+    .src(`${config.SRC_DIR}/scripts/libs/*.js`)
+    .pipe(gulp.dest(`${config.DIST_DIR}/assets/js/libs/`));
+});
+
 // dev сервер + livereload (встроенный)
 gulp.task("server", () => {
   browserSync.init({
@@ -139,6 +146,7 @@ gulp.task(
   gulp.series(
     "clean",
     "svg",
+    "libs",
     gulp.parallel("styles", "pug", "images", "fonts", "scripts"),
     gulp.parallel("watch", "server")
   )
@@ -150,6 +158,7 @@ gulp.task(
   gulp.series(
     "clean",
     "svg",
+    "libs",
     gulp.parallel("styles", "pug", "images", "fonts", "scripts", "php")
   )
 );
