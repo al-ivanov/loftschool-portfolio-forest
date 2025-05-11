@@ -7,7 +7,7 @@ module.exports = {
     admin: path.resolve(__dirname, "src/admin/main.js")
   },
   output: {
-    path: path.resolve(__dirname, "dist/admin"),
+    path: path.resolve(__dirname, "docs/admin"),
     filename: "[name].bundle.js"
   },
   module: {
